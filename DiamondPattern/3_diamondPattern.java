@@ -1,0 +1,57 @@
+/*
+ * 3. WAP in notebook & Dry run first then type
+Take the number of rows from the user :
+Rows = 3
+                1
+             2  3  4
+          5  6  7  8  9
+            10  11  12
+                13
+Rows = 4
+                    1
+                 2  3  4
+              5  6  7  8  9
+        10  11  12  13  14  15  16
+            17  18  19  20  21
+                22  23  24
+                    25
+
+		   */
+
+import java.util.Scanner;
+
+class NumberDiamond {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+
+        int number = 1;
+        for (int i = 1; i <= rows; i++) {
+            for (int space = 1; space <= rows - i; space++) {
+                System.out.print("    ");
+            }
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.printf("%4d", number);
+                number++;
+            }
+            System.out.println();
+        }
+
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int space = 1; space <= rows - i; space++) {
+                System.out.print("    ");
+            }
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.printf("%4d", number);
+                number++;
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
